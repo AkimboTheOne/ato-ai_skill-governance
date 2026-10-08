@@ -3,18 +3,18 @@ version: 1
 activation_policy:
 
   purpose: >
-    Define when cognitive governance should activate,
-    how strongly it should intervene,
-    and which governance layers should participate.
+    Define cuándo debe activarse la gobernanza cognitiva,
+    con qué intensidad debe intervenir
+    y qué capas de gobernanza deben participar.
 
   activation_model:
 
     philosophy: >
-      Governance should activate proportionally to
-      architectural risk, operational ambiguity,
-      and complexity exposure, while keeping
-      `SKILL.md` self-contained and treating
-      `AGENTS.md` as a local project reference.
+      La gobernanza debe activarse en proporción al
+      riesgo arquitectónico, la ambigüedad operativa
+      y la exposición a la complejidad, manteniendo
+      `SKILL.md` autocontenido y tratando
+      `AGENTS.md` como referencia local del proyecto.
 
     avoid:
       - constant_governance_noise
@@ -26,10 +26,11 @@ activation_policy:
 
     cognitive:
       description: >
-        Influences reasoning, planning, architecture,
-        and complexity evaluation. `SKILL.md` remains
-        self-contained; `AGENTS.md` is only a local
-        project reference when present.
+        Influye en el razonamiento, la planificación,
+        la arquitectura y la evaluación de complejidad.
+        `SKILL.md` permanece autocontenido; `AGENTS.md`
+        es solo una referencia local del proyecto
+        cuando está presente.
 
       artifacts:
         - FOUNDATION.md
@@ -39,8 +40,9 @@ activation_policy:
 
     runtime:
       description: >
-        Restricts runtime behavior, execution boundaries,
-        memory mutation, and operational risk.
+        Restringe el comportamiento en runtime, los
+        límites de ejecución, la mutación de memoria
+        y el riesgo operativo.
 
       artifacts:
         - governance/runtime-policy.yaml
@@ -48,8 +50,9 @@ activation_policy:
 
     evolutionary:
       description: >
-        Governs how skills evolve over time,
-        including review, expansion, and automation readiness.
+        Gobierna cómo evolucionan las skills con el tiempo,
+        incluida la revisión, la expansión y la preparación
+        para la automatización.
 
       artifacts:
         - reviews/checklist.md
@@ -207,8 +210,8 @@ activation_policy:
   complexity_budget:
 
     principle: >
-      Complexity must remain proportional to
-      the operational problem being solved.
+      La complejidad debe ser proporcional
+      al problema operativo que se está resolviendo.
 
     reject_if:
       - solution_complexity_exceeds_problem_complexity
@@ -292,5 +295,5 @@ activation_policy:
       - governance_boundaries_become_unclear
 
   final_principle: >
-    Governance should guide reasoning proportionally,
-    not become bureaucratic overhead.
+    La gobernanza debe orientar el razonamiento de forma
+    proporcional, sin convertirse en carga burocrática.

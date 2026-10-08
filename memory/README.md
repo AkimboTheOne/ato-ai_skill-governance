@@ -1,112 +1,104 @@
-# Operational Memory Model
+# Modelo de memoria operativa
 
-## Purpose
+## Propósito
 
-This folder defines how governance memory should be handled for this skill.
+Esta carpeta define cómo se debe gestionar la memoria de gobernanza de esta skill.
 
-The skill must distinguish between:
+La skill debe distinguir entre:
 
-1. **skill memory** — permanent memory about the governance skill itself,
-2. **installation memory** — local memory created when the skill is applied in a specific user, project, repo, organization, or agent environment,
-3. **global user memory** — user-level preferences or context that are not specific to a single repository.
+1. **memoria de la skill**: memoria permanente sobre la propia skill de gobernanza;
+2. **memoria de instalación**: memoria local creada al aplicar la skill en un usuario, proyecto, repositorio, organización o entorno de agentes concreto;
+3. **memoria global del usuario**: preferencias o contexto del usuario que no pertenecen a un único repositorio.
 
-Mixing these memory types creates governance drift.
-
----
-
-## Memory Boundary
-
-### Skill Memory
-
-Skill memory belongs to this repository.
-
-It records:
-
-- doctrine evolution,
-- governance decisions,
-- rejected architectural patterns,
-- maturity changes,
-- review learnings,
-- activation policy changes,
-- runtime policy changes,
-- and lessons that should apply to all installations of the skill.
-
-Skill memory is product memory.
-
-It should be versioned with the skill.
+Mezclar estos tipos de memoria produce desviaciones de gobernanza.
 
 ---
 
-### Installation Memory
+## Límites de memoria
 
-Installation memory belongs to the consuming environment.
+### Memoria de la skill
 
-It records:
+La memoria de la skill pertenece a este repositorio.
 
-- project-specific decisions,
-- user-specific preferences,
-- local constraints,
-- local exceptions,
-- reviewed skill instances,
-- repo-specific governance outcomes,
-- organization-specific risk posture,
-- and contextual tradeoffs.
+Registra:
 
-Installation memory is operational context.
+- la evolución de la doctrina;
+- decisiones de gobernanza;
+- patrones arquitectónicos rechazados;
+- cambios de madurez;
+- aprendizajes de revisión;
+- cambios en la política de activación;
+- cambios en la política de runtime;
+- y lecciones aplicables a todas las instalaciones de la skill.
 
-It should not be written back into the canonical skill repository unless it becomes a generalized learning.
+La memoria de la skill es memoria del producto.
 
----
-
-### Global User Memory
-
-Global user memory belongs to the user's Codex environment, not to this repository
-or to a consuming repository.
-
-It records broad user preferences and context that are not specific to one repo,
-organization, or governed skill instance.
-
-Global user memory is fallback context.
-
-It must not override local installation memory for the active repository.
+Debe versionarse junto con la skill.
 
 ---
 
-## Default Rule
+### Memoria de instalación
 
-> The canonical skill repository stores reusable governance knowledge.
+La memoria de instalación pertenece al entorno que consume la skill.
+
+Registra:
+
+- decisiones específicas del proyecto;
+- preferencias del usuario;
+- restricciones locales;
+- excepciones locales;
+- instancias revisadas de la skill;
+- resultados de gobernanza específicos del repositorio;
+- postura de riesgo propia de la organización;
+- y compensaciones contextuales.
+
+La memoria de instalación es contexto operativo.
+
+No debe incorporarse al repositorio canónico de la skill salvo que se convierta en un aprendizaje generalizable.
+
+---
+
+### Memoria global del usuario
+
+La memoria global del usuario pertenece al entorno Codex del usuario, no a este repositorio ni a un repositorio consumidor.
+
+Registra preferencias y contexto generales que no corresponden a un repositorio, organización o instancia de la skill concretos.
+
+La memoria global del usuario es contexto de respaldo.
+
+No debe prevalecer sobre la memoria local de instalación del repositorio activo.
+
+---
+
+## Regla predeterminada
+
+> El repositorio canónico de la skill almacena conocimiento de gobernanza reutilizable.
 >
-> The installation stores local operational history.
+> La instalación almacena el historial operativo local.
 >
-> Global user memory stores general preferences only when no repo-local memory
-> provides a more specific decision.
+> La memoria global del usuario almacena preferencias generales solo cuando no existe una decisión más específica en la memoria local del repositorio.
 
 ---
 
-## Memory Precedence
+## Precedencia de memoria
 
-When applying this skill inside a repository, memory must be read in this order:
+Al aplicar esta skill en un repositorio, se debe leer la memoria en este orden:
 
-1. **Repo-local installation memory** in `.ai-skill-governance/`
-2. **Global user memory** in the user's Codex environment
-3. **Canonical skill memory** in `memory/`
+1. **Memoria local de instalación del repositorio**, en `.ato-skill-governance/`.
+2. **Memoria global del usuario**, en el entorno Codex del usuario.
+3. **Memoria canónica de la skill**, en `memory/`.
 
-Repo-local installation memory has priority for decisions about the active
-repository.
+La memoria local de instalación del repositorio tiene prioridad para las decisiones sobre el repositorio activo.
 
-Global user memory may inform defaults, but it must not override explicit
-repo-local decisions.
+La memoria global del usuario puede orientar valores predeterminados, pero no debe anular decisiones explícitas locales.
 
-Canonical skill memory governs reusable doctrine. It must not store repo-specific
-preferences, user-specific preferences, organization-confidential decisions, or
-local exceptions.
+La memoria canónica de la skill gobierna la doctrina reutilizable. No debe almacenar preferencias específicas del repositorio o usuario, decisiones confidenciales de la organización ni excepciones locales.
 
 ---
 
-## Reserved Repository Memory Structure
+## Estructura reservada para la memoria del repositorio
 
-The canonical skill repository may use this structure when real, reusable skill
-memory exists:
+El repositorio canónico de la skill puede usar esta estructura cuando exista memoria de la skill real y reutilizable:
 
 ```text
 memory/
@@ -118,18 +110,16 @@ memory/
 └── installation-template/
 ```
 
-These directories are reserved extension points, not required empty folders.
-Do not create them until there is auditable content that justifies their
-existence.
+Estos directorios son puntos de extensión reservados; no es obligatorio crearlos vacíos. No los crees hasta que exista contenido auditable que justifique su presencia.
 
 ---
 
-## Installation Memory Structure
+## Estructura de la memoria de instalación
 
-A consuming repo may create:
+Un repositorio consumidor puede crear:
 
 ```text
-.ai-skill-governance/
+.ato-skill-governance/
 ├── decisions/
 ├── reviews/
 ├── exceptions/
@@ -137,80 +127,80 @@ A consuming repo may create:
 └── context.md
 ```
 
-This local memory belongs to the installation.
+Esta memoria local pertenece a la instalación.
 
-It should be human-readable, auditable, and removable without breaking the canonical skill.
-
----
-
-## Promotion Rule
-
-A local installation learning may be promoted into canonical skill memory only if it is:
-
-- reusable across installations,
-- not tied to private context,
-- not user-specific,
-- not organization-confidential,
-- and aligned with the core doctrine.
-
-Promotion should be explicit.
-
-Do not silently absorb local context into the skill.
+Debe ser legible por personas, auditable y eliminable sin romper la skill canónica.
 
 ---
 
-## Doctrinal Promotion Candidate
+## Regla de promoción
 
-The skill should recommend promotion when it detects a new doctrine that is:
+Un aprendizaje de una instalación local puede promoverse a la memoria canónica de la skill solo si:
 
-- reusable across installations,
-- compatible with the core doctrine,
-- useful for future skill governance,
-- supported by concrete context or repeated use,
-- not confidential,
-- not user-specific,
-- and not merely a local project preference.
+- es reutilizable entre instalaciones;
+- no depende de contexto privado;
+- no es específico del usuario;
+- no es confidencial de la organización;
+- y concuerda con la doctrina central.
 
-This is controlled self-management, not automatic mutation.
+La promoción debe ser explícita.
 
-When recommending promotion, the skill should provide:
-
-- the proposed doctrine,
-- evidence or context that motivated it,
-- compatibility with the core doctrine,
-- risks or tradeoffs,
-- the suggested canonical destination,
-- and draft text that a human can review.
-
-The draft must not be applied to canonical memory without explicit human approval.
-
-Reject promotion when the candidate:
-
-- contradicts the order `Question -> Eliminate -> Simplify -> Accelerate -> Automate`,
-- introduces hidden or opaque memory,
-- promotes automation before process stability,
-- expands runtime behavior without governance,
-- adds unjustified complexity,
-- or converts local preference into general doctrine.
+No incorpores contexto local a la skill de forma silenciosa.
 
 ---
 
-## Anti-Patterns
+## Propuesta de promoción doctrinal
 
-Avoid:
+La skill debería recomendar una promoción cuando detecte una doctrina nueva que sea:
 
-- storing user context inside canonical skill memory,
-- storing organization decisions inside the reusable skill,
-- treating installation exceptions as doctrine,
-- allowing local drift to rewrite global principles,
-- allowing global user memory to override repo-local decisions,
-- writing promotion candidates directly into canonical memory without review,
-- hiding governance memory in opaque runtime state.
+- reutilizable entre instalaciones;
+- compatible con la doctrina central;
+- útil para la gobernanza futura de skills;
+- respaldada por contexto concreto o uso repetido;
+- no confidencial;
+- no específica del usuario;
+- y no sea solo una preferencia local del proyecto.
+
+Esto es autogestión controlada, no mutación automática.
+
+Al recomendar la promoción, la skill debe proporcionar:
+
+- la doctrina propuesta;
+- la evidencia o el contexto que la motivó;
+- su compatibilidad con la doctrina central;
+- los riesgos o compensaciones;
+- el destino canónico sugerido;
+- y un borrador que una persona pueda revisar.
+
+El borrador no debe aplicarse a la memoria canónica sin aprobación humana explícita.
+
+Rechaza la promoción si la propuesta:
+
+- contradice el orden `Question -> Eliminate -> Simplify -> Accelerate -> Automate`;
+- introduce memoria oculta u opaca;
+- promueve la automatización antes de la estabilidad del proceso;
+- amplía el comportamiento en runtime sin gobernanza;
+- añade complejidad injustificada;
+- o convierte una preferencia local en doctrina general.
 
 ---
 
-## Final Principle
+## Antipatrones
 
-> Skill memory governs the product.
+Evita:
+
+- almacenar contexto del usuario en la memoria canónica de la skill;
+- almacenar decisiones de la organización en la skill reutilizable;
+- tratar excepciones de instalación como doctrina;
+- permitir que desviaciones locales reescriban principios globales;
+- permitir que la memoria global del usuario prevalezca sobre las decisiones locales del repositorio;
+- escribir propuestas de promoción directamente en la memoria canónica sin revisión;
+- ocultar la memoria de gobernanza en estado opaco de runtime.
+
+---
+
+## Principio final
+
+> La memoria de la skill gobierna el producto.
 >
-> Installation memory governs the local application of the product.
+> La memoria de instalación gobierna la aplicación local del producto.

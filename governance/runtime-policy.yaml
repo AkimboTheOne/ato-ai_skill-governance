@@ -4,13 +4,13 @@ runtime_policy:
 
   doctrine:
     principle: >
-      Runtime systems must not automate, mutate, distribute,
-      or escalate behavior beyond what has been explicitly
-      understood, bounded, and authorized.
+      Los sistemas en runtime no deben automatizar, mutar,
+      distribuir ni ampliar el comportamiento más allá de lo
+      que se haya comprendido, acotado y autorizado explícitamente.
 
     enforcement_goal: >
-      Preserve clarity, auditability, reversibility,
-      and human governance during execution.
+      Preservar la claridad, la auditabilidad, la reversibilidad
+      y la gobernanza humana durante la ejecución.
 
   execution_boundaries:
 
@@ -208,5 +208,5 @@ runtime_policy:
     default_when_uncertain: propose_simpler_alternative
 
   final_principle: >
-    Runtime execution must remain understandable,
-    bounded, auditable, and governable under operational pressure.
+    La ejecución en runtime debe seguir siendo comprensible,
+    acotada, auditable y gobernable bajo presión operativa.

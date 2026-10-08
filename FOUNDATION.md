@@ -1,271 +1,269 @@
 # FOUNDATION.md
 
-# Engineering Foundation
+# Fundamentos de ingeniería
 
-## Purpose
+## Propósito
 
-This document defines foundational engineering principles for:
+Este documento define principios fundamentales de ingeniería para:
 
-- AI skills,
-- agents,
-- copilots,
-- automation systems,
-- orchestration runtimes,
-- memory systems,
-- and AI-assisted development workflows.
+- skills de IA;
+- agentes;
+- copilotos;
+- sistemas de automatización;
+- runtimes de orquestación;
+- sistemas de memoria;
+- y flujos de desarrollo asistidos por IA.
 
-These principles exist to:
+Estos principios existen para:
 
-- minimize unnecessary complexity,
-- preserve operational clarity,
-- reduce architectural drift,
-- and prevent automation from amplifying chaos.
-
----
-
-## Core Doctrine
-
-> Do not automate, distribute, abstract, optimize, or orchestrate something that has not first been questioned, eliminated, simplified, and understood.
-
-Complexity is a liability unless explicitly justified.
+- minimizar la complejidad innecesaria;
+- preservar la claridad operativa;
+- reducir la desviación arquitectónica;
+- y evitar que la automatización amplifique el caos.
 
 ---
 
-## The Engineering Order
+## Doctrina central
 
-The order is mandatory.
+> No automatices, distribuyas, abstraigas, optimices ni orquestes algo que antes no se haya cuestionado, eliminado, simplificado y comprendido.
 
-### 1. Question
-
-Every requirement must:
-
-- have an owner,
-- have a reason,
-- solve a real problem,
-- justify its operational cost.
-
-Question:
-
-- legacy assumptions,
-- inherited patterns,
-- unnecessary abstractions,
-- best practices without context.
-
-If nobody can explain why something exists, it is a removal candidate.
+La complejidad es un riesgo salvo que se justifique explícitamente.
 
 ---
 
-### 2. Eliminate
+## Orden de ingeniería
 
-Remove:
+El orden es obligatorio.
 
-- redundant processes,
-- duplicated logic,
-- unnecessary dependencies,
-- unused tools,
-- premature architecture.
+### 1. Preguntar (Question)
 
-Complexity creates:
+Cada requisito debe:
 
-- maintenance cost,
-- debugging cost,
-- cognitive cost,
-- operational risk.
+- tener una persona responsable;
+- tener una razón;
+- resolver un problema real;
+- justificar su costo operativo.
 
-Prefer removal over expansion.
+Cuestiona:
 
----
+- supuestos heredados;
+- patrones heredados;
+- abstracciones innecesarias;
+- buenas prácticas aplicadas sin contexto.
 
-### 3. Simplify
-
-Only simplify after elimination.
-
-Prefer:
-
-- explicit systems,
-- readable structures,
-- local reasoning,
-- human-auditable memory,
-- deterministic behavior.
-
-Avoid:
-
-- hidden state,
-- magical behavior,
-- unnecessary indirection,
-- framework layering,
-- orchestration without need.
-
-A system that humans cannot easily understand cannot be governed safely.
+Si nadie puede explicar por qué existe algo, considera eliminarlo.
 
 ---
 
-### 4. Accelerate
+### 2. Eliminar (Eliminate)
 
-Only accelerate stable systems.
+Elimina:
 
-Speed without clarity amplifies defects.
+- procesos redundantes;
+- lógica duplicada;
+- dependencias innecesarias;
+- herramientas sin uso;
+- arquitectura prematura.
 
-Optimize:
+La complejidad genera:
 
-- feedback loops,
-- delivery cycles,
-- deployment friction,
-- retrieval efficiency,
-- operational throughput.
+- costo de mantenimiento;
+- costo de depuración;
+- costo cognitivo;
+- riesgo operativo.
 
-Do not accelerate:
-
-- ambiguity,
-- unstable architecture,
-- fragmented ownership,
-- inconsistent workflows.
+Prefiere eliminar antes que ampliar.
 
 ---
 
-### 5. Automate
+### 3. Simplificar (Simplify)
 
-Automation is the final step.
+Simplifica solo después de eliminar.
 
-Automation amplifies:
+Prioriza:
 
-- clarity,
-- or chaos.
+- sistemas explícitos;
+- estructuras legibles;
+- razonamiento local;
+- memoria auditable por personas;
+- comportamiento determinista.
 
-Do not automate:
+Evita:
 
-- broken processes,
-- contradictory workflows,
-- undefined ownership,
-- unstable architecture.
+- estado oculto;
+- comportamiento mágico;
+- indirection innecesaria;
+- capas de frameworks;
+- orquestación sin necesidad.
 
-AI does not replace engineering discipline.
-
-It magnifies it.
-
----
-
-## Engineering Defaults
-
-### Prefer
-
-- monolithic modularity before distribution,
-- markdown before custom formats,
-- local memory before distributed memory,
-- explicit contracts before implicit behavior,
-- deterministic workflows before autonomous loops,
-- simple tooling before orchestration platforms,
-- human-readable systems before opaque systems.
+Un sistema que las personas no pueden comprender fácilmente no se puede gobernar de forma segura.
 
 ---
 
-### Avoid By Default
+### 4. Acelerar (Accelerate)
 
-- premature microservices,
-- recursive agent systems,
-- unnecessary orchestration,
-- framework proliferation,
-- hidden mutable state,
-- excessive abstraction,
-- tool chains without operational need,
-- distributed complexity without measurable benefit.
+Acelera solo sistemas estables.
 
----
+La velocidad sin claridad amplifica los defectos.
 
-## Human Governance
+Optimiza:
 
-All systems should remain:
+- ciclos de retroalimentación;
+- ciclos de entrega;
+- fricción de despliegue;
+- eficiencia de recuperación;
+- rendimiento operativo.
 
-- inspectable,
-- reversible,
-- auditable,
-- understandable by humans.
+No aceleres:
 
-Human operators must retain:
-
-- control,
-- override capability,
-- architectural visibility.
-
-If only the AI understands the system, governance has failed.
+- la ambigüedad;
+- la arquitectura inestable;
+- las responsabilidades fragmentadas;
+- los flujos inconsistentes.
 
 ---
 
-## AI System Constraints
+### 5. Automatizar (Automate)
 
-AI systems must:
+La automatización es el último paso.
 
-- minimize unnecessary context,
-- minimize hallucination surfaces,
-- minimize operational ambiguity,
-- minimize dependency sprawl.
+La automatización amplifica:
 
-Every added capability increases:
+- la claridad;
+- o el caos.
 
-- cognitive load,
-- runtime complexity,
-- failure surface,
-- maintenance burden.
+No automatices:
 
-Capabilities must justify themselves continuously.
+- procesos defectuosos;
+- flujos contradictorios;
+- responsabilidades indefinidas;
+- arquitectura inestable.
+
+La IA no reemplaza la disciplina de ingeniería.
+
+La amplifica.
 
 ---
 
-## Complexity Governance
+## Valores predeterminados de ingeniería
 
-The goal is not minimalism.
+### Preferir
 
-The goal is controlled complexity.
+- modularidad monolítica antes de distribuir;
+- Markdown antes que formatos personalizados;
+- memoria local antes que memoria distribuida;
+- contratos explícitos antes que comportamiento implícito;
+- flujos deterministas antes que ciclos autónomos;
+- herramientas sencillas antes que plataformas de orquestación;
+- sistemas legibles por personas antes que sistemas opacos.
 
-Some systems legitimately require:
+### Evitar por defecto
 
-- distribution,
-- orchestration,
-- asynchronous execution,
-- retrieval systems,
-- advanced infrastructure.
+- microservicios prematuros;
+- sistemas recursivos de agentes;
+- orquestación innecesaria;
+- proliferación de frameworks;
+- estado mutable oculto;
+- abstracción excesiva;
+- cadenas de herramientas sin necesidad operativa;
+- complejidad distribuida sin beneficio medible.
 
-When complexity is introduced, it must be:
+---
 
-- explicit,
-- justified,
-- measurable,
-- maintainable,
+## Gobernanza humana
+
+Todos los sistemas deberían seguir siendo:
+
+- inspeccionables;
+- reversibles;
+- auditables;
+- comprensibles para las personas.
+
+Los operadores humanos deben conservar:
+
+- control;
+- capacidad de anulación;
+- visibilidad arquitectónica.
+
+Si solo la IA comprende el sistema, la gobernanza ha fallado.
+
+---
+
+## Restricciones de sistemas de IA
+
+Los sistemas de IA deben:
+
+- minimizar el contexto innecesario;
+- minimizar las superficies de alucinación;
+- minimizar la ambigüedad operativa;
+- minimizar la proliferación de dependencias.
+
+Cada capacidad añadida aumenta:
+
+- la carga cognitiva;
+- la complejidad de runtime;
+- la superficie de fallo;
+- la carga de mantenimiento.
+
+Las capacidades deben seguir justificándose con el tiempo.
+
+---
+
+## Gobernanza de la complejidad
+
+El objetivo no es el minimalismo.
+
+El objetivo es la complejidad controlada.
+
+Algunos sistemas requieren legítimamente:
+
+- distribución;
+- orquestación;
+- ejecución asíncrona;
+- sistemas de recuperación;
+- infraestructura avanzada.
+
+Cuando se introduzca complejidad, debe ser:
+
+- explícita;
+- justificada;
+- medible;
+- mantenible;
 - reversible.
 
 ---
 
-## Operational Principles
+## Principios operativos
 
-Before adding anything, ask:
+Antes de añadir algo, pregunta:
 
-- Does this already exist?
-- Can this be eliminated?
-- Can this be merged?
-- Can this be simplified?
-- Is this operationally necessary?
-- Does this reduce or increase cognitive load?
-- Can humans audit this easily?
-
----
-
-## Architectural Warning
-
-Most AI systems fail because they:
-
-- automate disorder,
-- distribute ambiguity,
-- optimize workarounds,
-- and scale complexity faster than understanding.
-
-Sophistication is not architectural quality.
-
-Clarity is.
+- ¿Esto ya existe?
+- ¿Se puede eliminar?
+- ¿Se puede integrar?
+- ¿Se puede simplificar?
+- ¿Es necesario en la operación?
+- ¿Reduce o aumenta la carga cognitiva?
+- ¿Las personas pueden auditarlo fácilmente?
 
 ---
 
-## Final Principle
+## Advertencia arquitectónica
 
-> The best AI architecture is not the most advanced.
+La mayoría de los sistemas de IA fallan porque:
+
+- automatizan el desorden;
+- distribuyen la ambigüedad;
+- optimizan soluciones temporales;
+- y escalan la complejidad más rápido que la comprensión.
+
+La sofisticación no es calidad arquitectónica.
+
+La claridad sí lo es.
+
+---
+
+## Principio final
+
+> La mejor arquitectura de IA no es la más avanzada.
 >
-> It is the one that preserves clarity while minimizing unnecessary complexity.
+> Es la que preserva la claridad y minimiza la complejidad innecesaria.

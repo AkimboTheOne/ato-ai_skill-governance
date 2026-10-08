@@ -1,118 +1,106 @@
-# Skill Charter: ai-skill-governance
+# Charter de la skill: ATO Skill Governance
 
-## Purpose
+## Propósito
 
-`ai-skill-governance` governs the design, review, activation, runtime boundaries,
-and evolution of AI skills.
+`ato-skill-governance` gobierna el diseño, la revisión, la activación, los límites de runtime y la evolución de las skills de IA.
 
-Its purpose is to keep skill work stable, controllable, repeatable, auditable, and
-understandable under operational pressure.
+Su propósito es mantener el trabajo con skills estable, controlable, repetible, auditable y comprensible bajo presión operativa.
 
 ---
 
-## Non-Goals
+## Fuera de alcance
 
-This skill is not:
+Esta skill no es:
 
-- a runtime engine,
-- an orchestration framework,
-- a CLI,
-- a code generator by default,
-- a multi-agent system,
-- an autonomous background agent,
-- a RAG system,
-- a vector database system,
-- or a persistent hidden memory system.
-
----
-
-## Mandatory Engineering Order
-
-All governance decisions must preserve this order:
-
-1. Question
-2. Eliminate
-3. Simplify
-4. Accelerate
-5. Automate
-
-Do not optimize before simplification.
-
-Do not automate before operational stability.
+- un motor de runtime;
+- un framework de orquestación;
+- un CLI;
+- un generador de código por defecto;
+- un sistema multiagente;
+- un agente autónomo en segundo plano;
+- un sistema RAG;
+- un sistema de base de datos vectorial;
+- ni un sistema de memoria persistente oculta.
 
 ---
 
-## Responsibilities
+## Orden obligatorio de ingeniería
 
-This skill is responsible for:
+Todas las decisiones de gobernanza deben preservar este orden:
 
-- clarifying skill purpose and boundaries,
-- defining activation conditions,
-- reviewing planner and runtime policies,
-- identifying unnecessary complexity,
-- challenging premature automation,
-- preserving human auditability,
-- identifying doctrinal promotion candidates when local learnings may improve
-  canonical skill doctrine,
-- and keeping governance artifacts consistent.
+1. Preguntar (Question)
+2. Eliminar (Eliminate)
+3. Simplificar (Simplify)
+4. Acelerar (Accelerate)
+5. Automatizar (Automate)
 
----
+No optimices antes de simplificar.
 
-## Operating Boundary
-
-This skill may advise, govern, restrict, or block proposed changes when they would
-increase complexity, reduce auditability, expand runtime behavior, or automate an
-unstable process.
-
-This charter remains self-contained. Local project references such as `AGENTS.md`
-may inform repository operations, but they are not required to interpret this
-charter.
-
-It should remain lightweight for formatting, wording, and low-risk documentation
-cleanup that does not change architecture, activation, runtime behavior, memory,
-tooling, or automation.
+No automatices antes de alcanzar estabilidad operativa.
 
 ---
 
-## Runtime Boundary
+## Responsabilidades
 
-This skill does not implement runtime enforcement.
+Esta skill se encarga de:
 
-It governs whether runtime behavior is justified, bounded, explicit, auditable, and
-human-governable before implementation.
-
----
-
-## Governance Constraints
-
-The skill must reject or defer:
-
-- hidden persistent state without explicit justification,
-- recursive or autonomous execution without clear bounds,
-- RAG or vector databases without demonstrated retrieval need,
-- multi-agent orchestration without operational necessity,
-- framework proliferation,
-- destructive side effects without explicit authorization,
-- and automation before process stability.
+- aclarar el propósito y los límites de las skills;
+- definir las condiciones de activación;
+- revisar políticas de planificación y runtime;
+- identificar complejidad innecesaria;
+- cuestionar la automatización prematura;
+- preservar la auditabilidad humana;
+- identificar propuestas de promoción doctrinal cuando aprendizajes locales puedan mejorar la doctrina canónica de la skill;
+- y mantener coherentes los artefactos de gobernanza.
 
 ---
 
-## Human Governance
+## Límite operativo
 
-Human operators must retain:
+Esta skill puede asesorar, gobernar, restringir o bloquear cambios propuestos cuando aumenten la complejidad, reduzcan la auditabilidad, amplíen el comportamiento en runtime o automaticen un proceso inestable.
 
-- visibility,
-- override capability,
-- execution awareness,
-- architectural control,
-- and final authority over destructive or persistent actions.
+Este charter es autocontenido. Las referencias locales del proyecto, como `AGENTS.md`, pueden orientar las operaciones del repositorio, pero no son necesarias para interpretar este charter.
 
-If humans cannot understand what changed, why it changed, and what risk was
-introduced, the governance model has failed.
+Debe mantener una intervención ligera ante cambios de formato, redacción y documentación de bajo riesgo que no modifiquen la arquitectura, la activación, el comportamiento en runtime, la memoria, las herramientas ni la automatización.
 
 ---
 
-## Final Principle
+## Límite de runtime
 
-> A skill should reduce operational complexity faster than it creates architectural
-> complexity.
+Esta skill no implementa la aplicación de políticas en runtime.
+
+Antes de implementar, gobierna si el comportamiento propuesto en runtime está justificado, acotado, explícito, auditable y sujeto a control humano.
+
+---
+
+## Restricciones de gobernanza
+
+La skill debe rechazar o aplazar:
+
+- estado persistente oculto sin justificación explícita;
+- ejecución recursiva o autónoma sin límites claros;
+- RAG o bases de datos vectoriales sin una necesidad de recuperación demostrada;
+- orquestación multiagente sin necesidad operativa;
+- proliferación de frameworks;
+- efectos secundarios destructivos sin autorización explícita;
+- y automatización antes de que el proceso sea estable.
+
+---
+
+## Gobernanza humana
+
+Los operadores humanos deben conservar:
+
+- visibilidad;
+- capacidad de anulación;
+- conocimiento de la ejecución;
+- control arquitectónico;
+- y autoridad final sobre acciones destructivas o persistentes.
+
+Si las personas no pueden entender qué cambió, por qué cambió y qué riesgo se introdujo, el modelo de gobernanza ha fallado.
+
+---
+
+## Principio final
+
+> Una skill debe reducir la complejidad operativa más rápido de lo que crea complejidad arquitectónica.

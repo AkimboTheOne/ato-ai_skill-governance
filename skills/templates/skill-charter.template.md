@@ -1,291 +1,296 @@
-# Skill Charter Template
+# Plantilla de charter de skill
 
-## Purpose
+## Propósito
 
-This document defines the operational identity,
-architectural boundaries,
-behavioral constraints,
-and governance expectations of a skill.
+Este documento define la identidad operativa, los límites arquitectónicos, las restricciones de comportamiento y las expectativas de gobernanza de una skill.
 
-A skill must remain:
+Una skill debe ser:
 
-- understandable,
-- bounded,
-- maintainable,
-- composable,
-- and operationally governable.
+- comprensible;
+- acotada;
+- mantenible;
+- componible;
+- y gobernable en la operación.
 
 ---
 
-# Skill Identity
+# Identidad de la skill
 
-## Skill Name
+## Nombre de la skill
 
 `<skill-name>`
 
 ---
 
-## Primary Purpose
+## Idioma y convenciones técnicas
 
-Describe the single operational capability this skill exists to provide.
+Redacta el contenido en el idioma más adecuado para la audiencia de esta skill. El repositorio puede contener skills en distintos idiomas.
 
-The purpose must be:
-
-- explicit,
-- bounded,
-- operationally meaningful.
-
-Avoid vague goals.
-
-A skill should solve a focused problem.
-
-It should not become a generalized platform.
+Mantén en inglés los nombres de archivos y directorios, los campos e identificadores de metadata, los valores de contrato consumidos por herramientas y las keywords de industria establecidas. La prosa y los textos descriptivos de metadata pueden usar el idioma elegido. Conserva en inglés los términos técnicos establecidos cuando su traducción reduzca la precisión o dificulte su reconocimiento.
 
 ---
 
-## Non-Goals
+## Propósito principal
 
-Explicitly define what the skill does NOT do.
+Describe la única capacidad operativa que esta skill debe proporcionar.
 
-Examples:
+El propósito debe ser:
 
-- orchestration engine,
-- autonomous runtime,
-- workflow platform,
-- distributed infrastructure,
-- generic code generation,
-- persistent hidden memory.
+- explícito;
+- acotado;
+- significativo en términos operativos.
 
-If boundaries are unclear, scope drift becomes inevitable.
+Evita objetivos vagos.
 
----
+Una skill debería resolver un problema concreto.
 
-# Operational Scope
-
-## Responsibilities
-
-List responsibilities directly owned by the skill.
-
-Responsibilities should be:
-
-- measurable,
-- operationally clear,
-- explicit.
-
-Prefer concrete operational capabilities over abstract intentions.
+No debería convertirse en una plataforma generalista.
 
 ---
 
-## Out of Scope
+## Fuera de alcance
 
-List intentionally excluded responsibilities.
+Define explícitamente lo que la skill NO hace.
 
-Anything not explicitly included should default to out of scope.
+Ejemplos:
 
----
+- motor de orquestación;
+- runtime autónomo;
+- plataforma de flujos de trabajo;
+- infraestructura distribuida;
+- generación de código genérica;
+- memoria persistente oculta.
 
-# Engineering Constraints
-
-## Mandatory Engineering Order
-
-The skill must always operate in this order:
-
-1. Question
-2. Eliminate
-3. Simplify
-4. Accelerate
-5. Automate
-
-Do not optimize before simplification.
-
-Do not automate before operational stability.
+Si los límites no están claros, la desviación del alcance será inevitable.
 
 ---
 
-## Complexity Constraints
+# Alcance operativo
 
-The skill should prefer:
+## Responsabilidades
 
-- explicit behavior,
-- deterministic workflows,
-- human-readable memory,
-- bounded context,
-- simple interfaces,
-- direct operations.
+Enumera las responsabilidades que pertenecen directamente a la skill.
 
-Avoid:
+Las responsabilidades deberían ser:
 
-- hidden state,
-- recursive orchestration,
-- unnecessary abstractions,
-- premature distribution,
-- orchestration-heavy architecture.
+- medibles;
+- claras en términos operativos;
+- explícitas.
+
+Prefiere capacidades operativas concretas frente a intenciones abstractas.
 
 ---
 
-## Architectural Defaults
+## Fuera del alcance operativo
 
-### Prefer
+Enumera las responsabilidades excluidas intencionalmente.
 
-- markdown/plain text,
-- filesystem-readable structures,
-- modular monolith patterns,
-- explicit contracts,
-- deterministic execution,
-- local reasoning.
-
-### Require Explicit Justification
-
-- vector databases,
-- RAG pipelines,
-- multi-agent systems,
-- distributed memory,
-- asynchronous orchestration,
-- background autonomous behavior,
-- hidden persistent state.
+Todo lo que no se incluya explícitamente debería quedar fuera del alcance por defecto.
 
 ---
 
-# Runtime Boundaries
+# Restricciones de ingeniería
 
-## Execution Model
+## Orden obligatorio de ingeniería
 
-Define whether the skill is:
+La skill siempre debe operar en este orden:
 
-- assistive,
-- advisory,
-- deterministic,
-- read-only,
-- write-enabled,
-- interactive,
-- bounded,
-- autonomous.
+1. Preguntar (Question)
+2. Eliminar (Eliminate)
+3. Simplificar (Simplify)
+4. Acelerar (Accelerate)
+5. Automatizar (Automate)
 
-Execution behavior must remain explicit.
+No optimices antes de simplificar.
 
----
-
-## Write Constraints
-
-If write operations exist:
-
-- require explicit intent,
-- require bounded targets,
-- require auditability,
-- require reversibility where possible.
-
-The skill must not mutate hidden state silently.
+No automatices antes de alcanzar estabilidad operativa.
 
 ---
 
-## Memory Constraints
+## Restricciones de complejidad
 
-Memory should remain:
+La skill debería priorizar:
 
-- inspectable,
-- editable,
-- auditable,
-- operationally understandable.
+- comportamiento explícito;
+- flujos deterministas;
+- memoria legible por personas;
+- contexto acotado;
+- interfaces sencillas;
+- operaciones directas.
 
-Avoid uncontrolled memory growth.
+Evita:
 
-Prefer local, human-readable memory.
-
----
-
-# Human Governance
-
-Human operators must retain:
-
-- visibility,
-- override capability,
-- execution awareness,
-- architectural control.
-
-If humans cannot understand what the skill is doing and why, governance has failed.
+- estado oculto;
+- orquestación recursiva;
+- abstracciones innecesarias;
+- distribución prematura;
+- arquitectura con exceso de orquestación.
 
 ---
 
-# Tooling Policy
+## Valores arquitectónicos predeterminados
 
-## Tool Usage Principles
+### Preferir
 
-The skill should:
+- Markdown y texto sin formato;
+- estructuras legibles desde el filesystem;
+- patrones de monolito modular;
+- contratos explícitos;
+- ejecución determinista;
+- razonamiento local.
 
-- minimize unnecessary tooling,
-- avoid recursive tool chains,
-- prefer deterministic operations,
-- minimize orchestration complexity.
+### Requieren justificación explícita
 
-Tool usage must remain:
-
-- bounded,
-- explainable,
-- operationally justified.
-
----
-
-# Planning Constraints
-
-Before introducing new capability, ask:
-
-- Does this solve a real problem?
-- Can this be simplified?
-- Can this be merged into existing behavior?
-- Does this increase cognitive load?
-- Is the complexity proportional to the problem?
-- Can humans still reason about the system?
-- Is this introducing sophistication without necessity?
+- bases de datos vectoriales;
+- pipelines RAG;
+- sistemas multiagente;
+- memoria distribuida;
+- orquestación asíncrona;
+- comportamiento autónomo en segundo plano;
+- estado persistente oculto.
 
 ---
 
-# Failure Philosophy
+# Límites de runtime
 
-The skill should fail:
+## Modelo de ejecución
 
-- explicitly,
-- predictably,
-- observably,
-- recoverably.
+Define si la skill es:
 
-Avoid:
+- asistencial;
+- consultiva;
+- determinista;
+- de solo lectura;
+- habilitada para escritura;
+- interactiva;
+- acotada;
+- autónoma.
 
-- silent degradation,
-- hidden retries,
-- concealed orchestration,
-- opaque runtime behavior.
-
-Operational clarity is more important than artificial smoothness.
-
----
-
-# Observability Principles
-
-The skill should preserve:
-
-- execution visibility,
-- operational traceability,
-- explainable behavior,
-- deterministic reasoning where possible.
-
-A human operator should understand:
-
-- what happened,
-- why it happened,
-- and what changed.
+El comportamiento de ejecución debe ser explícito.
 
 ---
 
-# Complexity Governance
+## Restricciones de escritura
 
-The objective is not minimalism.
+Si existen operaciones de escritura:
 
-The objective is controlled complexity.
+- requieren intención explícita;
+- requieren objetivos acotados;
+- requieren auditabilidad;
+- requieren reversibilidad siempre que sea posible.
 
-Sophistication without operational value is architectural debt.
+La skill no debe mutar estado oculto en silencio.
 
 ---
 
-# Final Principle
+## Restricciones de memoria
 
-> A skill should reduce operational complexity faster than it creates architectural complexity.
+La memoria debería ser:
+
+- inspeccionable;
+- editable;
+- auditable;
+- comprensible en términos operativos.
+
+Evita el crecimiento descontrolado de memoria.
+
+Prefiere memoria local y legible por personas.
+
+---
+
+# Gobernanza humana
+
+Los operadores humanos deben conservar:
+
+- visibilidad;
+- capacidad de anulación;
+- conocimiento de la ejecución;
+- control arquitectónico.
+
+Si las personas no pueden entender qué hace la skill y por qué, la gobernanza ha fallado.
+
+---
+
+# Política de herramientas
+
+## Principios de uso de herramientas
+
+La skill debería:
+
+- minimizar el uso innecesario de herramientas;
+- evitar cadenas recursivas de herramientas;
+- preferir operaciones deterministas;
+- minimizar la complejidad de orquestación.
+
+El uso de herramientas debe mantenerse:
+
+- acotado;
+- explicable;
+- justificado en términos operativos.
+
+---
+
+# Restricciones de planificación
+
+Antes de introducir una capacidad nueva, pregunta:
+
+- ¿Resuelve un problema real?
+- ¿Se puede simplificar?
+- ¿Se puede integrar en un comportamiento existente?
+- ¿Aumenta la carga cognitiva?
+- ¿La complejidad es proporcional al problema?
+- ¿Las personas todavía pueden razonar sobre el sistema?
+- ¿Introduce sofisticación sin necesidad?
+
+---
+
+# Filosofía ante fallos
+
+La skill debería fallar de forma:
+
+- explícita;
+- predecible;
+- observable;
+- recuperable.
+
+Evita:
+
+- degradación silenciosa;
+- reintentos ocultos;
+- orquestación encubierta;
+- comportamiento opaco en runtime.
+
+La claridad operativa importa más que una fluidez artificial.
+
+---
+
+# Principios de observabilidad
+
+La skill debería preservar:
+
+- visibilidad de la ejecución;
+- trazabilidad operativa;
+- comportamiento explicable;
+- razonamiento determinista cuando sea posible.
+
+Un operador humano debería entender:
+
+- qué ocurrió;
+- por qué ocurrió;
+- y qué cambió.
+
+---
+
+# Gobernanza de la complejidad
+
+El objetivo no es el minimalismo.
+
+El objetivo es la complejidad controlada.
+
+La sofisticación sin valor operativo es deuda arquitectónica.
+
+---
+
+# Principio final
+
+> Una skill debe reducir la complejidad operativa más rápido de lo que crea complejidad arquitectónica.

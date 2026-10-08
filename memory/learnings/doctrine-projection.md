@@ -1,29 +1,19 @@
-# Doctrine Projection
+# Proyección de la doctrina
 
-## Learning
+## Aprendizaje
 
-A skill should have one shared doctrine. Operational artifacts such as
-`SKILL.md`, `AGENTS.md`, planner rules, runtime policy, activation policy, memory
-policy, and review checklists are context-specific projections of that doctrine.
+Una skill debe tener una doctrina compartida. Los artefactos operativos, como `SKILL.md`, `AGENTS.md`, las reglas de planificación, la política de runtime, la política de activación, la política de memoria y las listas de revisión, son proyecciones de esa doctrina adaptadas a cada contexto.
 
-They may specialize how the doctrine applies in a given context, but they must not
-introduce competing doctrine or require precedence rules to resolve doctrinal
-conflict.
+Pueden especializar la aplicación de la doctrina en un contexto, pero no deben introducir doctrinas en competencia ni requerir reglas de precedencia para resolver conflictos doctrinales.
 
-If artifacts appear to conflict, resolve the issue by restoring alignment with the
-shared doctrine and narrowing the context-specific artifact.
+Si los artefactos parecen contradecirse, resuelve el problema alineándolos de nuevo con la doctrina compartida y acotando el artefacto contextual.
 
-## Evidence
+## Evidencia
 
-This learning came from reviewing `ai-skill-governance` itself. Treating
-`SKILL.md` and `AGENTS.md` as competing authorities created an unnecessary
-precedence question. The better model is that `SKILL.md` stays self-contained
-for skill use and activation, while `AGENTS.md` serves local repo operations.
+Este aprendizaje surgió al revisar `ato-skill-governance`. Tratar `SKILL.md` y `AGENTS.md` como autoridades en competencia creó una cuestión de precedencia innecesaria. El mejor modelo mantiene `SKILL.md` autocontenido para el uso y la activación de la skill, mientras `AGENTS.md` se ocupa de las operaciones locales del repositorio.
 
-## Governance Notes
+## Notas de gobernanza
 
-- Compatible with the required order: Question, Eliminate, Simplify, Accelerate,
-  Automate.
-- Reduces ambiguity without adding runtime behavior, hidden state, automation, or
-  orchestration.
-- Keeps doctrinal memory human-readable and versioned with the canonical skill.
+- Compatible con el orden requerido: Preguntar (Question), Eliminar (Eliminate), Simplificar (Simplify), Acelerar (Accelerate) y Automatizar (Automate).
+- Reduce la ambigüedad sin añadir comportamiento en runtime, estado oculto, automatización ni orquestación.
+- Mantiene la memoria doctrinal legible por personas y versionada junto con la skill canónica.

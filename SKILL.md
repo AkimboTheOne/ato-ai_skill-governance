@@ -1,475 +1,439 @@
 ---
-name: ai-skill-governance
-description: Governance skill for designing, reviewing, and evolving AI skills, planner rules, runtime policies, activation semantics, memory strategy, tool usage, automation readiness, orchestration, RAG, vector databases, multi-agent behavior, and human-governable AI systems. Use before implementation planning when work may increase architecture, runtime behavior, hidden state, tooling, automation, or operational complexity. Use when reviewing AGENTS.md as a project-local operational reference, not as a required dependency of the skill.
+name: ato-skill-governance
+description: Skill de gobernanza para diseñar, revisar y evolucionar skills de IA, reglas de planificación, políticas de runtime, semántica de activación, estrategia de memoria, uso de herramientas, preparación para la automatización, orquestación, RAG, bases de datos vectoriales, comportamiento multiagente y sistemas de IA gobernables por personas. Úsala antes de planificar la implementación cuando el trabajo pueda ampliar la arquitectura, el comportamiento en runtime, el estado oculto, las herramientas, la automatización o la complejidad operativa. Úsala al revisar AGENTS.md como referencia operativa local del proyecto, no como dependencia necesaria de la skill.
 ---
 
-# AI Skill Governance
+# ATO Skill Governance
 
-## Description
+## Descripción
 
-Governance skill for designing, reviewing, and evolving AI skills, planner rules,
-runtime policies, activation semantics, and automation readiness.
+Skill de gobernanza para diseñar, revisar y evolucionar skills de IA, reglas de planificación, políticas de runtime, semántica de activación y preparación para la automatización.
 
-This skill keeps skill work stable, controllable, repeatable, auditable, and
-human-governable. It is a governance layer, not a runtime engine.
-
----
-
-## Core Doctrine
-
-> Do not automate, distribute, abstract, optimize, or orchestrate something that has
-> not first been questioned, eliminated, simplified, and understood.
-
-Complexity is operational cost unless continuously justified.
+Mantiene el trabajo con skills estable, controlable, repetible, auditable y gobernable por personas. Es una capa de gobernanza, no un motor de runtime.
 
 ---
 
-## Mandatory Engineering Order
+## Doctrina central
 
-All skill work must follow this order:
+> No automatices, distribuyas, abstraigas, optimices ni orquestes algo que antes no se haya cuestionado, eliminado, simplificado y comprendido.
 
-1. Question
-2. Eliminate
-3. Simplify
-4. Accelerate
-5. Automate
-
-Do not optimize before simplification.
-
-Do not automate before stability.
+La complejidad es un costo operativo mientras no se justifique de forma continua.
 
 ---
 
-## Operational Primitives
+## Orden obligatorio de ingeniería
 
-Use these actions as the skill's mechanical behavior. Apply them in sequence
-when relevant, and stop as soon as the needed decision is reached.
+Todo trabajo con skills debe seguir este orden:
 
-### 1. Question
+1. Preguntar (Question)
+2. Eliminar (Eliminate)
+3. Simplificar (Simplify)
+4. Acelerar (Accelerate)
+5. Automatizar (Automate)
 
-- Apply when a request, assumption, boundary, or desired outcome is unclear.
-- Evaluate necessity, ownership, actual problem, and expected operational value.
-- Produce a validated requirement, a narrowed question, or a removal candidate.
-- Stop when the requirement is justified or rejected.
+No optimices antes de simplificar.
 
-### 2. Eliminate
-
-- Apply after the requirement is understood.
-- Evaluate duplicates, unused abstractions, redundant tooling, and unnecessary orchestration.
-- Produce a removal or merge decision before proposing additions.
-- Stop when the remaining work is the smallest viable scope.
-
-### 3. Simplify
-
-- Apply after elimination.
-- Evaluate whether the workflow is explicit, deterministic, auditable, and locally understandable.
-- Produce a simpler structure, contract, or explanation with fewer moving parts.
-- Stop when simplification would start removing required capability.
-
-### 4. Bound Scope
-
-- Apply before implementation planning.
-- Evaluate in-scope and out-of-scope behavior, ownership, and target surfaces.
-- Produce a clear boundary that prevents drift, scope creep, and accidental expansion.
-- Stop when the boundary is explicit enough to govern execution.
-
-### 5. Check Stability
-
-- Apply before acceleration or automation.
-- Evaluate whether the process, inputs, outputs, and failure modes are stable enough to proceed.
-- Produce a stability judgment and defer acceleration if the workflow is still ambiguous.
-- Stop when instability is the dominant risk.
-
-### 6. Assess Governance Risk
-
-- Apply whenever hidden state, autonomy, orchestration, side effects, or expanded tooling are proposed.
-- Evaluate auditability, reversibility, human control, and operational ambiguity.
-- Produce a risk level that selects advisory, governing, restrictive, or blocking behavior.
-- Stop when the request crosses into unjustified hidden state or unsafe automation.
-
-### 7. Request Justification
-
-- Apply when the proposal increases complexity, runtime scope, or operational risk.
-- Evaluate whether the user can justify the need, cost, and control model.
-- Produce a concrete justification request focused on necessity and reversibility.
-- Stop when the justification is sufficient or the work is deferred.
-
-### 8. Choose the Minimum Intervention
-
-- Apply after risk is assessed.
-- Evaluate the least intervention that preserves clarity, auditability, and human governance.
-- Produce the weakest effective mode: advisory, governing, restrictive, or blocking.
-- Stop when the chosen intervention is sufficient to protect the system.
-
-### 9. Preserve Auditability
-
-- Apply throughout planning, review, and runtime boundary setting.
-- Evaluate whether decisions, inputs, outputs, and side effects remain human-readable and traceable.
-- Produce explicit contracts, constraints, and decision records.
-- Stop when the change would hide behavior or make governance opaque.
-
-### 10. Decide Promotion or Deferral
-
-- Apply when a local learning, rule, or pattern could become reusable doctrine.
-- Evaluate whether the learning is reusable, non-confidential, and aligned with the core doctrine.
-- Produce either a promotion candidate or a deliberate deferral.
-- Stop when the candidate is only a local preference or lacks evidence.
+No automatices antes de alcanzar estabilidad.
 
 ---
 
-## Normative Language
+## Primitivas operativas
 
-- `must` defines a hard constraint.
-- `should` defines default behavior unless a documented exception applies.
-- `may` defines optional behavior.
+Usa estas acciones como comportamiento mecánico de la skill. Aplícalas en secuencia cuando corresponda y detente en cuanto se alcance la decisión necesaria.
 
-When a requirement conflicts with a default, the hard constraint wins.
+### 1. Preguntar (Question)
 
----
+- Aplícala cuando una solicitud, un supuesto, un límite o el resultado deseado no estén claros.
+- Evalúa la necesidad, la responsabilidad, el problema real y el valor operativo esperado.
+- Produce un requisito validado, una pregunta más acotada o una propuesta para eliminar algo.
+- Detente cuando el requisito esté justificado o rechazado.
 
-## When to Use
+### 2. Eliminar (Eliminate)
 
-Use this skill before implementation planning when a request involves:
+- Aplícala después de entender el requisito.
+- Evalúa duplicados, abstracciones sin uso, herramientas redundantes y orquestación innecesaria.
+- Produce una decisión de eliminación o integración antes de proponer incorporaciones.
+- Detente cuando el trabajo restante tenga el menor alcance viable.
 
-- creating, modifying, or reviewing a skill,
-- changing `SKILL.md` or project-local operational references,
-- designing planner rules,
-- designing runtime policies,
-- defining activation conditions,
-- changing memory strategy,
-- adding tools,
-- introducing automation,
-- introducing orchestration,
-- evaluating RAG,
-- evaluating vector databases,
-- evaluating multi-agent behavior,
-- or expanding architecture.
+### 3. Simplificar (Simplify)
 
-Keep this skill lightweight for formatting, typo fixes, minor wording updates, and
-low-risk documentation cleanup that does not change behavior, activation, runtime
-policy, memory, tooling, automation, or architecture.
+- Aplícala después de eliminar lo innecesario.
+- Evalúa si el flujo de trabajo es explícito, determinista, auditable y comprensible localmente.
+- Produce una estructura, un contrato o una explicación más sencilla y con menos partes móviles.
+- Detente cuando simplificar implique eliminar una capacidad necesaria.
 
----
+### 4. Acotar el alcance (Bound Scope)
 
-## Activation
+- Aplícala antes de planificar la implementación.
+- Evalúa el comportamiento incluido y excluido, la responsabilidad y las superficies objetivo.
+- Produce límites claros que eviten desviaciones, expansión accidental y aumento del alcance.
+- Detente cuando el límite sea suficientemente explícito para guiar la ejecución.
 
-This skill activates as a planning and governance constraint before execution.
+### 5. Comprobar la estabilidad (Check Stability)
 
-It should influence reasoning before implementation details are chosen. Its role is
-to question necessity, reduce complexity, preserve auditability, and prevent
-premature automation.
+- Aplícala antes de acelerar o automatizar.
+- Evalúa si el proceso, las entradas, las salidas y los modos de fallo son lo bastante estables.
+- Produce un juicio de estabilidad y aplaza la aceleración si el flujo aún es ambiguo.
+- Detente cuando la inestabilidad sea el riesgo dominante.
 
-Activation must be proportional. Detect the governance risk, apply the minimum
-intervention sufficient for that risk, and keep the primary task moving when a
-change is non-behavioral or low risk.
+### 6. Evaluar el riesgo de gobernanza (Assess Governance Risk)
 
----
+- Aplícala cuando se propongan estado oculto, autonomía, orquestación, efectos secundarios o ampliación de herramientas.
+- Evalúa la auditabilidad, la reversibilidad, el control humano y la ambigüedad operativa.
+- Produce un nivel de riesgo que determine si la intervención será consultiva, rectora, restrictiva o bloqueante.
+- Detente si la solicitud conduce a estado oculto injustificado o automatización insegura.
 
-## Automatic Activation Conditions
+### 7. Solicitar justificación (Request Justification)
 
-Activate automatically when work touches:
+- Aplícala cuando la propuesta aumente la complejidad, el alcance de runtime o el riesgo operativo.
+- Evalúa si se justifican la necesidad, el costo y el modelo de control.
+- Formula una solicitud concreta de justificación centrada en la necesidad y la reversibilidad.
+- Detente cuando la justificación sea suficiente o el trabajo se aplace.
 
-- `SKILL.md`,
-- `AGENTS.md`,
-- `planner-rules.yaml`,
-- `runtime-policy.yaml`,
-- `activation-policy.yaml`,
-- skill charters,
-- review checklists,
-- memory policy,
-- tool policy,
-- orchestration,
-- automation,
-- RAG,
-- vector databases,
-- multi-agent systems,
-- recursive agent behavior,
-- background execution,
-- hidden persistent state,
-- or runtime side effects.
+### 8. Elegir la intervención mínima (Choose the Minimum Intervention)
 
----
+- Aplícala después de evaluar el riesgo.
+- Evalúa la intervención menos intensa que preserve la claridad, la auditabilidad y la gobernanza humana.
+- Elige el modo eficaz más moderado: consultivo, rector, restrictivo o bloqueante.
+- Detente cuando la intervención elegida proteja suficientemente el sistema.
 
-## Keyword Activation
+### 9. Preservar la auditabilidad (Preserve Auditability)
 
-Keyword activation is contextual. Broad terms should prompt review of the
-surrounding request, not strong intervention by themselves.
+- Aplícala durante la planificación, la revisión y la definición de límites de runtime.
+- Evalúa si las decisiones, entradas, salidas y efectos secundarios siguen siendo legibles y trazables para las personas.
+- Produce contratos, restricciones y registros de decisión explícitos.
+- Detente si el cambio ocultaría el comportamiento o volvería opaca la gobernanza.
 
-Broad contextual terms include:
+### 10. Decidir la promoción o el aplazamiento (Decide Promotion or Deferral)
 
-- `skill`,
-- `activation`,
-- `retrieval`,
-- `memory`,
-- `governance`,
-- `auditability`,
-- `human override`,
-- and `runtime`.
-
-Structural and restrictive triggers include:
-
-- `SKILL.md`,
-- `AGENTS.md`,
-- `planner rules`,
-- `runtime policy`,
-- `activation conditions`,
-- `memory policy`,
-- `tool policy`,
-- `automation`,
-- `orchestration`,
-- `multi-agent`,
-- `RAG`,
-- `vector database`,
-- `persistent memory`,
-- `background agent`,
-- `recursive agent`,
-- `tool chain`,
-- `hidden persistent state`,
-- `autonomous background execution`,
-- `recursive orchestration`,
-- and `automation before process stability`.
-
-Use [governance/activation-policy.yaml](governance/activation-policy.yaml) as the
-canonical trigger taxonomy.
-
-Keyword activation must consider context. Do not overactivate on incidental mentions
-that do not affect skill design, architecture, runtime behavior, memory, tools, or
-automation.
+- Aplícala cuando un aprendizaje o patrón local pueda convertirse en doctrina reutilizable.
+- Evalúa si es reutilizable, no confidencial y coherente con la doctrina central.
+- Propón promoverlo o aplazarlo deliberadamente.
+- Detente cuando la propuesta sea solo una preferencia local o carezca de evidencia.
 
 ---
 
-## Behavioral Activation
+## Lenguaje normativo
 
-Activate when a request would:
+- `must` establece una restricción obligatoria.
+- `should` establece un comportamiento predeterminado, salvo que exista una excepción documentada.
+- `may` establece un comportamiento opcional.
 
-- increase architectural scope,
-- add a new moving part,
-- add or expand tool usage,
-- introduce hidden or persistent state,
-- reduce human inspectability,
-- automate an unstable process,
-- add recursive or autonomous behavior,
-- increase context loading,
-- or make system behavior harder to audit.
+Cuando un requisito entre en conflicto con un comportamiento predeterminado, prevalece la restricción obligatoria.
 
 ---
 
-## Blocking Activation
+## Idioma y convenciones editoriales
 
-Move from advisory guidance to restrictive or blocking guidance when a request
-proposes:
+El contenido de cada skill puede redactarse en el idioma más adecuado para su audiencia. No se exige que todas las skills del repositorio utilicen el mismo idioma.
 
-- destructive or irreversible side effects,
-- hidden persistent state,
-- autonomous background execution,
-- recursive orchestration,
-- tool chains without clear terminal conditions,
-- RAG without demonstrated retrieval need,
-- vector databases without demonstrated retrieval need,
-- multi-agent orchestration without operational necessity,
-- framework proliferation,
-- or automation before process stability.
+Mantén en inglés las convenciones técnicas compartidas:
 
-Blocking guidance must require explicit justification, human review, or deferral
-before implementation.
+- nombres de archivos y directorios;
+- nombres de campos de metadata, claves de front matter e identificadores;
+- valores de contrato consumidos por herramientas;
+- y keywords de industria establecidas.
+
+La prosa y los textos descriptivos de la metadata, incluida la descripción de front matter, pueden redactarse en el idioma elegido para la skill. Conserva en inglés los términos técnicos establecidos cuando traducirlos reduzca la precisión o dificulte su reconocimiento.
 
 ---
 
-## Suppression Conditions
+## Cuándo usarla
 
-Suppress governance intervention, or keep it lightweight, when the work is limited
-to:
+Usa esta skill antes de planificar la implementación cuando una solicitud implique:
 
-- spelling fixes,
-- formatting changes,
-- simple wording improvements,
-- non-behavioral documentation cleanup,
-- renaming for clarity without semantic change,
-- or reviewing content without changing architecture, activation, runtime behavior,
-  memory, tooling, or automation.
+- crear, modificar o revisar una skill;
+- cambiar `SKILL.md` o referencias operativas locales del proyecto;
+- diseñar reglas de planificación;
+- diseñar políticas de runtime;
+- definir condiciones de activación;
+- cambiar la estrategia de memoria;
+- añadir herramientas;
+- introducir automatización;
+- introducir orquestación;
+- evaluar RAG;
+- evaluar bases de datos vectoriales;
+- evaluar comportamiento multiagente;
+- o ampliar la arquitectura.
 
-Suppression does not apply when a small-looking change alters operational behavior,
-activation semantics, runtime boundaries, or human governance.
-
----
-
-## Activation Priority
-
-High priority applies to hidden state, autonomous execution, background execution,
-recursive orchestration, RAG, vector databases, multi-agent behavior, destructive
-side effects, runtime side effects, and automation proposals.
-
-Medium priority applies to new skills, skill upgrades, planner rule changes, runtime
-policy changes, memory strategy, tool expansion, and architecture refactoring.
-
-Low priority applies to formatting, wording, and low-risk documentation cleanup.
-
-High priority maps to restrictive guidance and may become blocking when unsafe
-automation, hidden state, irreversible side effects, or unbounded orchestration are
-proposed. Medium priority maps to governing guidance. Low priority maps to advisory
-guidance or suppression.
+Mantén la intervención ligera ante cambios de formato, correcciones ortográficas, mejoras menores de redacción y limpieza documental de bajo riesgo que no cambien el comportamiento, la activación, la política de runtime, la memoria, las herramientas, la automatización ni la arquitectura.
 
 ---
 
-## Output Modes
+## Activación
 
-### Advisory
+Esta skill se activa como restricción de planificación y gobernanza antes de la ejecución.
 
-Use for low-risk work. Identify tradeoffs, suggest simplification, and avoid
-unnecessary ceremony.
+Debe influir en el razonamiento antes de elegir detalles de implementación. Su función es cuestionar la necesidad, reducir la complejidad, preservar la auditabilidad y evitar la automatización prematura.
 
-### Governing
-
-Use for normal skill design and review. Apply the mandatory engineering order,
-validate boundaries, and preserve the canonical artifacts.
-
-### Restrictive
-
-Use when complexity, scope, or runtime risk is increasing. Require justification,
-recommend scope reduction, and prefer simpler alternatives.
-
-### Blocking
-
-Use when the request would introduce unsafe automation, hidden state, irreversible
-side effects, recursive orchestration, or unbounded complexity without explicit
-authorization and operational justification.
+La activación debe ser proporcional. Detecta el riesgo de gobernanza, aplica la intervención mínima suficiente y mantén en marcha la tarea principal cuando el cambio no sea conductual o sea de bajo riesgo.
 
 ---
 
-## Responsibilities
+## Condiciones de activación automática
 
-This skill is responsible for:
+Actívala automáticamente cuando el trabajo afecte:
 
-- clarifying skill purpose and boundaries,
-- applying the operational primitives mechanically and consistently,
-- defining activation conditions,
-- reviewing planner and runtime policies,
-- identifying unnecessary complexity,
-- challenging premature automation,
-- preserving human auditability,
-- recommending simpler alternatives,
-- identifying doctrinal promotion candidates when local learnings may improve
-  canonical skill doctrine,
-- and keeping governance artifacts consistent.
-
----
-
-## Non-Goals
-
-This skill does not directly own:
-
-- domain-specific execution,
-- business workflow automation,
-- external platform integration,
-- autonomous write operations,
-- background execution,
-- multi-agent orchestration,
-- persistent hidden memory,
-- runtime enforcement implementation,
-- RAG infrastructure,
-- vector database infrastructure,
-- or framework platforms.
-
-Those capabilities may be supported by other skills or tools, but this skill governs
-whether such additions are justified.
+- `SKILL.md`;
+- `AGENTS.md`;
+- `planner-rules.yaml`;
+- `runtime-policy.yaml`;
+- `activation-policy.yaml`;
+- charters de skills;
+- listas de revisión;
+- política de memoria;
+- política de herramientas;
+- orquestación;
+- automatización;
+- RAG;
+- bases de datos vectoriales;
+- sistemas multiagente;
+- comportamiento recursivo de agentes;
+- ejecución en segundo plano;
+- estado persistente oculto;
+- o efectos secundarios de runtime.
 
 ---
 
-## Hard Constraints
+## Activación por palabras clave
 
-- Preserve the mandatory order: Question, Eliminate, Simplify, Accelerate,
-  Automate.
-- Do not automate unstable or unclear workflows.
-- Do not optimize before simplification.
-- Do not introduce hidden persistent state.
-- Do not introduce RAG, vector databases, recursive agents, multi-agent
-  orchestration, or framework-heavy systems without explicit operational
-  justification.
-- Preserve human visibility, auditability, reversibility, and override capability.
-- Keep state, policies, and memory human-readable unless a stronger operational need
-  is documented.
-- Do not promote local or global memory into canonical skill memory without
-  explicit human approval.
+La activación por palabras clave depende del contexto. Los términos generales deben motivar la revisión de la solicitud circundante, no una intervención intensa por sí solos.
 
----
+Entre los términos generales de contexto se incluyen:
 
-## Runtime Governance
+- `skill`;
+- `activation`;
+- `retrieval`;
+- `memory`;
+- `governance`;
+- `auditability`;
+- `human override`;
+- y `runtime`.
 
-Runtime behavior must remain:
+Entre los activadores estructurales y restrictivos se incluyen:
 
-- explicit,
-- bounded,
-- inspectable,
-- auditable,
-- reversible when the action can be reversed or explicitly confirmable when it
-  cannot,
-- and human-governable.
+- `SKILL.md`;
+- `AGENTS.md`;
+- `planner rules`;
+- `runtime policy`;
+- `activation conditions`;
+- `memory policy`;
+- `tool policy`;
+- `automation`;
+- `orchestration`;
+- `multi-agent`;
+- `RAG`;
+- `vector database`;
+- `persistent memory`;
+- `background agent`;
+- `recursive agent`;
+- `tool chain`;
+- `hidden persistent state`;
+- `autonomous background execution`;
+- `recursive orchestration`;
+- y `automation before process stability`.
 
-This skill does not implement runtime enforcement. It governs whether proposed
-runtime behavior is justified, bounded, and understandable before implementation.
+Usa [governance/activation-policy.yaml](governance/activation-policy.yaml) como taxonomía canónica de activadores.
 
----
-
-## Canonical Artifacts
-
-This skill relies on these canonical artifacts:
-
-- [README.md](README.md) for repository orientation,
-- [FOUNDATION.md](FOUNDATION.md) for reusable engineering doctrine,
-- [skill-charter.md](skill-charter.md) for this skill's concrete charter,
-- [governance/planner-rules.yaml](governance/planner-rules.yaml) for planning
-  heuristics,
-- [governance/runtime-policy.yaml](governance/runtime-policy.yaml) for runtime
-  boundaries,
-- [governance/activation-policy.yaml](governance/activation-policy.yaml) for
-  activation policy,
-- [reviews/checklist.md](reviews/checklist.md) for review criteria,
-- [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md)
-  for future skill charters,
-- [memory/README.md](memory/README.md) for memory boundaries, precedence, and
-  doctrinal promotion candidate handling,
-- and [references/README.md](references/README.md) for governed reference material.
-
-These artifacts are context-specific projections of the shared doctrine in
-`FOUNDATION.md`. They must not introduce competing doctrine.
-
-`AGENTS.md` is a project-local operational reference when present. It can inform
-repo maintenance, but `SKILL.md` must remain usable without depending on it as a
-canonical artifact.
-
-Root-level duplicates of governed policies should not be created.
+La activación por palabras clave debe considerar el contexto. No la sobreactives ante menciones incidentales que no afecten el diseño de skills, la arquitectura, el comportamiento de runtime, la memoria, las herramientas o la automatización.
 
 ---
 
-## Evolution Policy
+## Activación por comportamiento
 
-This skill should evolve by:
+Actívala cuando una solicitud:
 
-1. strengthening clarity,
-2. reducing ambiguity,
-3. improving activation semantics,
-4. refining governance artifacts,
-5. documenting decisions,
-6. and only later considering automation.
-
-Do not add code until the documentation-based operating model is stable.
-
-Do not add runtime behavior until activation and enforcement semantics are clear.
-
----
-
-## Quality Bar
-
-A good output from this skill should reduce complexity, clarify boundaries, improve
-decision quality, expose unjustified assumptions, and preserve human governance.
-
-A bad output adds ceremony, creates generic frameworks, hides complexity, overuses
-YAML, introduces runtime before doctrine, or makes the skill harder to govern than
-the skills it supports.
+- aumente el alcance arquitectónico;
+- añada una parte móvil;
+- añada o amplíe el uso de herramientas;
+- introduzca estado oculto o persistente;
+- reduzca la capacidad de inspección humana;
+- automatice un proceso inestable;
+- añada comportamiento recursivo o autónomo;
+- aumente la carga de contexto;
+- o dificulte la auditoría del comportamiento del sistema.
 
 ---
 
-## Final Principle
+## Activación bloqueante
 
-> A skill should reduce operational complexity faster than it creates architectural
-> complexity.
+Pasa de orientación consultiva a orientación restrictiva o bloqueante cuando una solicitud proponga:
+
+- efectos secundarios destructivos o irreversibles;
+- estado persistente oculto;
+- ejecución autónoma en segundo plano;
+- orquestación recursiva;
+- cadenas de herramientas sin una condición clara de finalización;
+- RAG sin necesidad de recuperación demostrada;
+- bases de datos vectoriales sin necesidad de recuperación demostrada;
+- orquestación multiagente sin necesidad operativa;
+- proliferación de frameworks;
+- o automatización antes de que el proceso sea estable.
+
+La orientación bloqueante debe requerir justificación explícita, revisión humana o aplazamiento antes de la implementación.
+
+---
+
+## Condiciones de supresión
+
+Suprime la intervención de gobernanza, o mantenla ligera, cuando el trabajo se limite a:
+
+- correcciones ortográficas;
+- cambios de formato;
+- mejoras sencillas de redacción;
+- limpieza documental que no cambie el comportamiento;
+- renombrados para mayor claridad sin cambio semántico;
+- o revisión de contenido sin cambios en arquitectura, activación, comportamiento de runtime, memoria, herramientas ni automatización.
+
+La supresión no aplica cuando un cambio aparentemente pequeño altere el comportamiento operativo, la semántica de activación, los límites de runtime o la gobernanza humana.
+
+---
+
+## Prioridad de activación
+
+La prioridad alta corresponde al estado oculto, la ejecución autónoma, la ejecución en segundo plano, la orquestación recursiva, RAG, las bases de datos vectoriales, el comportamiento multiagente, los efectos secundarios destructivos, los efectos secundarios de runtime y las propuestas de automatización.
+
+La prioridad media corresponde a la creación de skills, las mejoras de skills, los cambios en reglas de planificación o políticas de runtime, la estrategia de memoria, la ampliación de herramientas y la refactorización de arquitectura.
+
+La prioridad baja corresponde al formato, la redacción y la limpieza documental de bajo riesgo.
+
+La prioridad alta conduce a orientación restrictiva y puede volverse bloqueante ante automatización insegura, estado oculto, efectos irreversibles u orquestación sin límites. La prioridad media conduce a orientación rectora. La prioridad baja conduce a orientación consultiva o supresión.
+
+---
+
+## Modos de salida
+
+### Consultivo
+
+Úsalo para trabajo de bajo riesgo. Identifica compensaciones, sugiere simplificaciones y evita formalidades innecesarias.
+
+### Rector
+
+Úsalo para el diseño y la revisión habituales de skills. Aplica el orden obligatorio de ingeniería, valida los límites y preserva los artefactos canónicos.
+
+### Restrictivo
+
+Úsalo cuando aumenten la complejidad, el alcance o el riesgo de runtime. Requiere justificación, recomienda reducir el alcance y prioriza alternativas más sencillas.
+
+### Bloqueante
+
+Úsalo cuando la solicitud introduzca automatización insegura, estado oculto, efectos irreversibles, orquestación recursiva o complejidad sin límites, sin justificación operativa ni autorización explícitas.
+
+---
+
+## Responsabilidades
+
+Esta skill se encarga de:
+
+- aclarar el propósito y los límites de las skills;
+- aplicar las primitivas operativas de forma mecánica y coherente;
+- definir condiciones de activación;
+- revisar políticas de planificación y runtime;
+- identificar complejidad innecesaria;
+- cuestionar la automatización prematura;
+- preservar la auditabilidad humana;
+- recomendar alternativas más sencillas;
+- identificar propuestas de promoción doctrinal cuando aprendizajes locales puedan mejorar la doctrina canónica;
+- y mantener coherentes los artefactos de gobernanza.
+
+---
+
+## Fuera de alcance
+
+Esta skill no se encarga directamente de:
+
+- ejecución específica de un dominio;
+- automatización de flujos de negocio;
+- integración con plataformas externas;
+- operaciones de escritura autónomas;
+- ejecución en segundo plano;
+- orquestación multiagente;
+- memoria persistente oculta;
+- implementación de mecanismos de cumplimiento en runtime;
+- infraestructura RAG;
+- infraestructura de bases de datos vectoriales;
+- ni plataformas de frameworks.
+
+Otras skills o herramientas pueden admitir esas capacidades, pero esta skill gobierna si están justificadas.
+
+---
+
+## Restricciones obligatorias
+
+- Preserva el orden obligatorio: Preguntar, Eliminar, Simplificar, Acelerar y Automatizar.
+- No automatices flujos inestables o poco claros.
+- No optimices antes de simplificar.
+- No introduzcas estado persistente oculto.
+- No introduzcas RAG, bases de datos vectoriales, agentes recursivos, orquestación multiagente ni sistemas basados en frameworks sin justificación operativa explícita.
+- Preserva la visibilidad humana, la auditabilidad, la reversibilidad y la capacidad de anulación.
+- Mantén el estado, las políticas y la memoria en formatos legibles por personas, salvo que exista una necesidad operativa más fuerte documentada.
+- No promuevas memoria local o global a memoria canónica de la skill sin aprobación humana explícita.
+
+---
+
+## Gobernanza de runtime
+
+El comportamiento en runtime debe seguir siendo:
+
+- explícito;
+- acotado;
+- inspeccionable;
+- auditable;
+- reversible cuando sea posible, o confirmable de forma explícita cuando no lo sea;
+- y gobernable por personas.
+
+Esta skill no implementa mecanismos de cumplimiento en runtime. Gobierna si el comportamiento propuesto está justificado, acotado y es comprensible antes de implementarlo.
+
+---
+
+## Artefactos canónicos
+
+Esta skill se apoya en estos artefactos canónicos:
+
+- [README.md](README.md), para orientarse en el repositorio;
+- [FOUNDATION.md](FOUNDATION.md), para consultar la doctrina de ingeniería reutilizable;
+- [skill-charter.md](skill-charter.md), para consultar el charter concreto de esta skill;
+- [governance/planner-rules.yaml](governance/planner-rules.yaml), para consultar heurísticas de planificación;
+- [governance/runtime-policy.yaml](governance/runtime-policy.yaml), para consultar los límites de runtime;
+- [governance/activation-policy.yaml](governance/activation-policy.yaml), para consultar la política de activación;
+- [reviews/checklist.md](reviews/checklist.md), para consultar los criterios de revisión;
+- [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md), para consultar charters de futuras skills;
+- [memory/README.md](memory/README.md), para consultar los límites y la precedencia de memoria, y el manejo de propuestas de promoción doctrinal;
+- y [references/README.md](references/README.md), para consultar material de referencia gobernado.
+
+Estos artefactos son proyecciones contextuales de la doctrina compartida en `FOUNDATION.md`. No deben introducir doctrinas en competencia.
+
+`AGENTS.md` es una referencia operativa local del proyecto cuando está presente. Puede orientar el mantenimiento del repositorio, pero `SKILL.md` debe seguir siendo útil sin depender de él como artefacto canónico.
+
+No se deben crear duplicados de políticas gobernadas en la raíz.
+
+---
+
+## Política de evolución
+
+Esta skill debería evolucionar mediante:
+
+1. mayor claridad;
+2. menor ambigüedad;
+3. semántica de activación más precisa;
+4. mejora de los artefactos de gobernanza;
+5. documentación de decisiones;
+6. y solo después, evaluación de automatización.
+
+No añadas código hasta que el modelo operativo basado en documentación sea estable.
+
+No añadas comportamiento en runtime hasta que estén claras la activación y la aplicación de políticas.
+
+---
+
+## Criterio de calidad
+
+Un buen resultado de esta skill reduce complejidad, aclara límites, mejora las decisiones, expone supuestos injustificados y preserva la gobernanza humana.
+
+Un mal resultado añade formalidades, crea frameworks genéricos, oculta complejidad, abusa de YAML, introduce runtime antes de estabilizar la doctrina o hace que gobernar la skill sea más difícil que gobernar las skills que ayuda a diseñar.
+
+---
+
+## Principio final
+
+> Una skill debe reducir la complejidad operativa más rápido de lo que crea complejidad arquitectónica.

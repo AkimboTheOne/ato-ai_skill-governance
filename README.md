@@ -1,107 +1,99 @@
-# ai-skill-governance
+# ATO Skill Governance
 
-Foundation repository for AI skill governance, planning constraints, runtime policies, and cognitive governance rails.
-
----
-
-## Purpose
-
-This repository defines a documentation-first governance foundation for designing, building, reviewing, and evolving AI skills.
-
-It exists to help agents and human operators:
-
-- define skill boundaries,
-- preserve architectural clarity,
-- prevent unnecessary complexity,
-- establish planning heuristics,
-- constrain runtime behavior,
-- evaluate automation readiness,
-- and evolve skills without governance drift.
+Repositorio base para la gobernanza de skills de IA, las restricciones de planificación, las políticas de runtime y los principios de gobernanza cognitiva.
 
 ---
 
-## What This Repository Is
+## Propósito
 
-This repository is:
+Este repositorio define una base de gobernanza, centrada en la documentación, para diseñar, crear, revisar y evolucionar skills de IA.
 
-- a skill governance foundation,
-- a cognitive rail for agents,
-- a source of planning and runtime constraints,
-- a repository of reusable skill engineering artifacts,
-- and a documentation-first operating model for skill evolution.
+Ayuda a agentes y operadores humanos a:
 
----
-
-## What This Repository Is Not
-
-This repository is not currently:
-
-- a CLI,
-- a runtime engine,
-- an orchestration framework,
-- a Python package,
-- a code generator,
-- a multi-agent system,
-- or an autonomous execution platform.
-
-Code may be introduced later only if the documentation-based operating model proves stable enough to justify automation.
+- definir los límites de las skills;
+- preservar la claridad arquitectónica;
+- evitar complejidad innecesaria;
+- establecer heurísticas de planificación;
+- limitar el comportamiento en runtime;
+- evaluar si la automatización está preparada;
+- y evolucionar las skills sin desviaciones de gobernanza.
 
 ---
 
-## Core Doctrine
+## Qué es este repositorio
 
-> Do not automate, distribute, abstract, optimize, or orchestrate something that has not first been questioned, eliminated, simplified, and understood.
+Este repositorio es:
 
-Complexity is not value.
-
-Complexity is operational cost unless continuously justified.
-
----
-
-## Engineering Order
-
-All design, planning, review, and evolution should follow this order:
-
-1. Question
-2. Eliminate
-3. Simplify
-4. Accelerate
-5. Automate
-
-Do not optimize before simplification.
-
-Do not automate before stability.
+- una base de gobernanza de skills;
+- una guía cognitiva para agentes;
+- una fuente de restricciones de planificación y runtime;
+- un repositorio de artefactos reutilizables de ingeniería de skills;
+- y un modelo operativo, centrado en documentación, para la evolución de skills.
 
 ---
 
-## Intellectual Influences
+## Qué no es este repositorio
 
-This repository is inspired by several engineering and operational traditions:
+Actualmente, este repositorio no es:
 
-- [Elon Musk's five-step engineering algorithm](https://insideevs.com/news/526954/elon-musk-5-steps-success/):
-  question requirements, delete, simplify, accelerate, automate.
-- [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/index.html):
-  waste reduction, flow, jidoka, just-in-time, and kaizen.
-- [Lean Thinking](https://www.lean.org/lexicon-terms/lean-thinking-and-practice/):
-  value, value stream, flow, pull, and continuous improvement.
-- [Theory of Constraints](https://www.tocinstitute.org/five-focusing-steps.html):
-  focus improvement on the system constraint before optimizing locally.
-- [Systems Thinking](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/):
-  preserve visibility into feedback loops, leverage points, and unintended
-  consequences.
+- un CLI;
+- un motor de runtime;
+- un framework de orquestación;
+- un paquete de Python;
+- un generador de código;
+- un sistema multiagente;
+- ni una plataforma de ejecución autónoma.
 
-These influences are not treated as rigid doctrine. They inform the repository's
-governance posture: question first, remove unnecessary complexity, simplify what
-remains, accelerate only stable systems, and automate last.
+Solo se debería incorporar código si el modelo operativo basado en documentación demuestra suficiente estabilidad para justificar su automatización.
 
 ---
 
-## Repository Structure
+## Doctrina central
 
-Canonical structure:
+> No automatices, distribuyas, abstraigas, optimices ni orquestes algo que antes no se haya cuestionado, eliminado, simplificado y comprendido.
+
+La complejidad no es valor.
+
+La complejidad es un costo operativo mientras no se justifique de forma continua.
+
+---
+
+## Orden de ingeniería
+
+Todo diseño, planificación, revisión y evolución debería seguir este orden:
+
+1. Preguntar (Question)
+2. Eliminar (Eliminate)
+3. Simplificar (Simplify)
+4. Acelerar (Accelerate)
+5. Automatizar (Automate)
+
+No optimices antes de simplificar.
+
+No automatices antes de alcanzar estabilidad.
+
+---
+
+## Influencias intelectuales
+
+Este repositorio se inspira en varias tradiciones de ingeniería y operaciones:
+
+- [Algoritmo de ingeniería de cinco pasos de Elon Musk](https://insideevs.com/news/526954/elon-musk-5-steps-success/): cuestionar requisitos, eliminar, simplificar, acelerar y automatizar.
+- [Sistema de Producción Toyota](https://global.toyota/en/company/vision-and-philosophy/production-system/index.html): reducción de desperdicio, flujo, jidoka, just-in-time y kaizen.
+- [Lean Thinking](https://www.lean.org/lexicon-terms/lean-thinking-and-practice/): valor, cadena de valor, flujo, pull y mejora continua.
+- [Teoría de las Restricciones](https://www.tocinstitute.org/five-focusing-steps.html): enfocar la mejora en la restricción del sistema antes de optimizar localmente.
+- [Pensamiento sistémico](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/): preservar la visibilidad de los ciclos de retroalimentación, los puntos de intervención y las consecuencias no previstas.
+
+Estas influencias no se consideran una doctrina rígida. Orientan la postura de gobernanza del repositorio: cuestionar primero, eliminar la complejidad innecesaria, simplificar lo que quede, acelerar solo sistemas estables y automatizar al final.
+
+---
+
+## Estructura del repositorio
+
+Estructura canónica:
 
 ```text
-ai-skill-governance/
+ato-skill-governance/
 ├── README.md
 ├── SKILL.md
 ├── FOUNDATION.md
@@ -129,80 +121,65 @@ ai-skill-governance/
     └── README.md
 ```
 
-The structure should remain small until additional artifacts justify their
-existence.
+La estructura debe seguir siendo pequeña hasta que nuevos artefactos justifiquen su existencia.
 
-Root-level duplicates such as `planner-rules.yaml`, `runtime-policy.yaml`, or
-`checklist.md` are intentionally avoided. The canonical paths are the governed
-subdirectories listed above.
+Se evitan deliberadamente duplicados en la raíz como `planner-rules.yaml`, `runtime-policy.yaml` o `checklist.md`. Las rutas canónicas son los subdirectorios gobernados que se muestran arriba.
 
 ---
 
-## Artifact Families
+## Familias de artefactos
 
-| Artifact | Purpose |
+| Artefacto | Propósito |
 |---|---|
-| [SKILL.md](SKILL.md) | Defines this skill's operating identity, activation contract, and boundaries. |
-| [FOUNDATION.md](FOUNDATION.md) | Defines reusable engineering doctrine. |
-| [AGENTS.md](AGENTS.md) | Defines agent-facing operational constraints. |
-| [skill-charter.md](skill-charter.md) | Defines the concrete charter for this repository's skill. |
-| [governance/planner-rules.yaml](governance/planner-rules.yaml) | Defines planning heuristics and complexity governance. |
-| [governance/runtime-policy.yaml](governance/runtime-policy.yaml) | Defines runtime execution boundaries. |
-| [governance/activation-policy.yaml](governance/activation-policy.yaml) | Defines when and how governance activates. |
-| [reviews/checklist.md](reviews/checklist.md) | Defines review criteria before implementation or automation. |
-| [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md) | Defines the standard charter for future skills. |
-| [memory/README.md](memory/README.md) | Defines memory boundaries, precedence, and doctrinal promotion candidate handling. |
-| [references/README.md](references/README.md) | Defines how stable references may be added without creating uncontrolled context. |
+| [SKILL.md](SKILL.md) | Define la identidad operativa, el contrato de activación y los límites de esta skill. |
+| [FOUNDATION.md](FOUNDATION.md) | Define la doctrina de ingeniería reutilizable. |
+| [AGENTS.md](AGENTS.md) | Define las restricciones operativas para agentes. |
+| [skill-charter.md](skill-charter.md) | Define el charter concreto de la skill de este repositorio. |
+| [governance/planner-rules.yaml](governance/planner-rules.yaml) | Define heurísticas de planificación y gobernanza de complejidad. |
+| [governance/runtime-policy.yaml](governance/runtime-policy.yaml) | Define los límites de ejecución en runtime. |
+| [governance/activation-policy.yaml](governance/activation-policy.yaml) | Define cuándo y cómo se activa la gobernanza. |
+| [reviews/checklist.md](reviews/checklist.md) | Define criterios de revisión antes de implementar o automatizar. |
+| [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md) | Define el charter estándar para futuras skills. |
+| [memory/README.md](memory/README.md) | Define límites y precedencia de memoria, y el manejo de propuestas de promoción doctrinal. |
+| [references/README.md](references/README.md) | Define cómo agregar referencias estables sin crear contexto descontrolado. |
 
 ---
 
-## Artifact Relationships
+## Relaciones entre artefactos
 
-`FOUNDATION.md` defines the shared doctrine. `SKILL.md`,
-`governance/*.yaml`, `reviews/checklist.md`, and `memory/README.md` are
-context-specific projections of that doctrine. They must not introduce competing
-doctrine.
+`FOUNDATION.md` define la doctrina compartida. `SKILL.md`, `governance/*.yaml`, `reviews/checklist.md` y `memory/README.md` son proyecciones contextuales de esa doctrina. No deben introducir doctrinas en competencia.
 
-`SKILL.md` is the operational entrypoint for Codex. It defines how the skill is
-used, when it activates, and what boundaries it preserves. It should stay concise
-and delegate detail to the canonical artifacts.
+`SKILL.md` es el punto de entrada operativo para Codex. Define cómo se usa la skill, cuándo se activa y qué límites preserva. Debe ser conciso y delegar los detalles a los artefactos canónicos.
 
-`AGENTS.md` defines the repository's local operational reference. It governs
-project-specific maintenance and usage constraints without becoming a required
-input to `SKILL.md`.
+`AGENTS.md` define la referencia operativa local del repositorio. Gobierna el mantenimiento y las restricciones de uso específicas del proyecto, sin ser un requisito para interpretar `SKILL.md`.
 
-`SKILL.md` and `AGENTS.md` share the same foundation, but they serve different
-roles. `SKILL.md` remains self-contained as the skill interface; `AGENTS.md`
-remains the authoritative local project reference.
+`SKILL.md` y `AGENTS.md` comparten la misma base, pero cumplen funciones distintas. `SKILL.md` permanece autocontenido como interfaz de la skill; `AGENTS.md` sigue siendo la referencia local autoritativa del proyecto.
 
-`skill-charter.md` defines the concrete charter for this repository's skill.
+`skill-charter.md` define el charter concreto de la skill de este repositorio.
 
-The `governance/` files define planner, runtime, and activation policy derived
-from the shared doctrine.
+Los archivos de `governance/` definen las políticas de planificación, runtime y activación derivadas de la doctrina compartida.
 
-The `reviews/`, `skills/templates/`, `memory/`, and `references/` directories
-support review, future skill creation, memory boundaries, precedence, doctrinal
-promotion, and governed references.
+Los directorios `reviews/`, `skills/templates/`, `memory/` y `references/` respaldan la revisión, la creación futura de skills, los límites de memoria, la precedencia, la promoción doctrinal y las referencias gobernadas.
 
 ---
 
-## Evolution Policy
+## Política de evolución
 
-This repository should evolve in this order:
+Este repositorio debería evolucionar en el siguiente orden:
 
-1. stabilize doctrine,
-2. stabilize skill identity,
-3. define agent constraints,
-4. define planning rules,
-5. define runtime policy,
-6. define activation semantics,
-7. define review process,
-8. then evaluate whether automation is justified.
+1. estabilizar la doctrina;
+2. estabilizar la identidad de la skill;
+3. definir las restricciones para agentes;
+4. definir las reglas de planificación;
+5. definir la política de runtime;
+6. definir la semántica de activación;
+7. definir el proceso de revisión;
+8. y después evaluar si la automatización está justificada.
 
-Premature code is architectural debt.
+El código prematuro es deuda arquitectónica.
 
 ---
 
-## Final Principle
+## Principio final
 
-> A skill should reduce operational complexity faster than it creates architectural complexity.
+> Una skill debe reducir la complejidad operativa más rápido de lo que crea complejidad arquitectónica.

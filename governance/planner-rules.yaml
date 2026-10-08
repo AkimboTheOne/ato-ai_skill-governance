@@ -4,9 +4,9 @@ planner_rules:
 
   doctrine:
     principle: >
-      Do not automate, distribute, abstract, optimize, or orchestrate
-      something that has not first been questioned,
-      eliminated, simplified, and understood.
+      No automatices, distribuyas, abstraigas, optimices ni orquestes
+      algo que antes no se haya cuestionado,
+      eliminado, simplificado y comprendido.
 
     mandatory_order:
       - question
@@ -130,5 +130,5 @@ planner_rules:
       - deterministic_behavior
 
   final_principle: >
-    Prefer systems that remain understandable,
-    governable, and maintainable under operational pressure.
+    Prefiere sistemas que sigan siendo comprensibles,
+    gobernables y mantenibles bajo presión operativa.

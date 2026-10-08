@@ -1,26 +1,17 @@
-# Operational Primitives Locality
+# Ubicación de las primitivas operativas
 
-## Learning
+## Aprendizaje
 
-Operational primitives that define a skill's mechanical behavior should remain
-inside that skill's `SKILL.md` unless there is a concrete external reuse case or
-a separate maintenance boundary that justifies extraction.
+Las primitivas operativas que definen el comportamiento mecánico de una skill deben permanecer dentro de su `SKILL.md`, salvo que exista un caso concreto de reutilización externa o un límite de mantenimiento independiente que justifique extraerlas.
 
-This keeps doctrine and behavior aligned, avoids a second authority layer, and
-reduces drift between the skill's stated rules and its actual execution model.
+Así, la doctrina y el comportamiento se mantienen alineados, se evita una segunda capa de autoridad y se reduce la desviación entre las reglas declaradas y el modelo real de ejecución.
 
-## Evidence
+## Evidencia
 
-This learning came from shaping `ai-skill-governance` itself. A separate artifact
-for the 10 operational actions was unnecessary once the actions were expressed as
-internal doctrine with fixed execution shape.
+Este aprendizaje surgió al definir `ato-skill-governance`. Un artefacto separado para las 10 acciones operativas no era necesario una vez que estas se expresaron como doctrina interna con una forma de ejecución fija.
 
-## Governance Notes
+## Notas de gobernanza
 
-- Compatible with the required order: Question, Eliminate, Simplify, Accelerate,
-  Automate.
-- Reduces duplication without adding runtime behavior, hidden state, or
-  orchestration.
-- Applies only when the goal is reusable operational behavior, not documentation
-  cataloging.
-
+- Compatible con el orden requerido: Preguntar (Question), Eliminar (Eliminate), Simplificar (Simplify), Acelerar (Accelerate) y Automatizar (Automate).
+- Reduce duplicación sin añadir comportamiento en runtime, estado oculto ni orquestación.
+- Solo aplica cuando el objetivo es un comportamiento operativo reutilizable, no un catálogo de documentación.
